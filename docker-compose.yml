@@ -6,3 +6,4 @@ services:
       container_name: node
       volumes: 
           - ./:/usr/src/app/
+          - /usr/src/app/node_modules

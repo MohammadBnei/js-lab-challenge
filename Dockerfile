@@ -6,6 +6,8 @@ RUN apk add make git
 
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 
-RUN npm install --silent && mv node_modules ../
+RUN npm install --silent
 
-ENTRYPOINT npm test
+COPY . .
+
+CMD npm test
