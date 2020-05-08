@@ -19,7 +19,7 @@ describe('Clamp Occurences speed test suite', () => {
         t1 = performance.now()
         const time1 = t1 - t0
 
-        console.log({ time1 })
+        console.log({ time: time1, elements: bigArray1.length })
         expect(time1).toBeLessThan(10)
     })
 
@@ -31,12 +31,12 @@ describe('Clamp Occurences speed test suite', () => {
         t1 = performance.now()
         const time2 = t1 - t0
 
-        console.log({ time2 })
+        console.log({ time: time2, elements: bigArray2.length })
         expect(time2).toBeLessThan(30)
 
     })
 
-    it('Should take less than 30 ms with an array of 1000000', () => {
+    it('Should take less than 70 ms with an array of 1000000', () => {
 
         const bigArray3 = getBigArray(1000000)
         t0 = performance.now()
@@ -44,7 +44,7 @@ describe('Clamp Occurences speed test suite', () => {
         t1 = performance.now()
         const time3 = t1 - t0
 
-        console.log({ time3 })
+        console.log({ time: time3, elements: bigArray3.length })
         expect(time3).toBeLessThan(70)
     });
 });
